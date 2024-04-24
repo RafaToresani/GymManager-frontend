@@ -1,0 +1,34 @@
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    gap: 1rem;
+}
+
+.form-field{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-field label{
+    width: 15rem;
+}
+
+.form-field input{
+    width: 30rem;
+    font-size: 1.5rem;
+}

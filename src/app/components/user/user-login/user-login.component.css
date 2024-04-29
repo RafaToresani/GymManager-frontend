@@ -1,0 +1,20 @@
+.section-title{
+    width: 100%;
+    height: auto;
+}
+
+.form-container{
+    width: 50vh;
+    justify-content: center;
+    
+}
+
+form{
+    width: 50vh;
+    box-shadow: none;
+}
+
+.form-submit{
+    align-self: flex-start;
+}
+

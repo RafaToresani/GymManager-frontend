@@ -1,0 +1,10 @@
+<div class="search-container">
+    <form [formGroup]="searchForm" (submit)="search()" class="search-form">
+        <select name="valueType" id="valueType" formControlName="valueType">
+            <option value="dni" selected>DNI</option>
+        </select>
+        <input type="text" name="search" id="search" formControlName="search">
+        <input type="submit" value="Buscar" id="btn-search">
+    </form>
+    <p class="error" *ngIf="error !== ''">{{error}}</p>
+</div>

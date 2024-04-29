@@ -10,7 +10,7 @@ import { environments } from '../../../environments/environments';
 })
 export class LoginService {
 
-  currentUserLoginOn: BehaviorSubject<Boolean> = new BehaviorSubject<Boolean>(false);
+  currentUserLoginOn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   currentUserData: BehaviorSubject<AuthResponse> = new BehaviorSubject<AuthResponse>({
     userId:0,
     email: '',
@@ -19,7 +19,7 @@ export class LoginService {
   });
 
   constructor(private http: HttpClient) {
-    this.currentUserLoginOn = new BehaviorSubject<Boolean>(sessionStorage.getItem('token') != null);
+    this.currentUserLoginOn = new BehaviorSubject<boolean>(sessionStorage.getItem('token') != null);
     this.currentUserData = new BehaviorSubject<AuthResponse>({
       userId: sessionStorage.getItem('userId') ? parseInt(sessionStorage.getItem('userId')!) : 0,
       email: sessionStorage.getItem('email') || '',
@@ -59,7 +59,7 @@ export class LoginService {
   }
   logout() {
     sessionStorage.removeItem("token");
-    sessionStorage.removeItem("username");
+    sessionStorage.removeItem("email");
     sessionStorage.removeItem("userId");
     sessionStorage.removeItem("role");
     this.currentUserLoginOn.next(false);
@@ -69,8 +69,12 @@ export class LoginService {
     return this.currentUserData.asObservable();
   }
 
-  get userLoginOn(): Observable<Boolean>{
+  get userLoginOn(): Observable<boolean>{
     return this.currentUserLoginOn.asObservable();
   }
 
+  isAuth(){
+    return this.currentUserLoginOn.value;
+  }
+  
 }

@@ -1,34 +1,19 @@
-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.section-title{
     width: 100%;
-    margin: 0 auto;
+    height: auto;
+}
+
+.form-container{
+    width: 50vh;
+    justify-content: center;
 }
 
 form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 40%;
-    margin: 0 auto;
-    font-size: 1.5rem;
-    gap: 1rem;
+    width: 50vh;
+    box-shadow: none;
 }
 
-.form-field{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.form-submit{
+    align-self: flex-start;
 }
 
-.form-field label{
-    width: 15rem;
-}
-
-.form-field input{
-    width: 30rem;
-    font-size: 1.5rem;
-}

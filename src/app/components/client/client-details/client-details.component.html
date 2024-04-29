@@ -1,0 +1,71 @@
+<h2 class="section-title">Detalles</h2>
+<section class="details-container">
+    <article *ngIf="client !== undefined" class="client-card card">
+        
+        <div class="header-card">
+            <h3>{{client.firstName}} {{client.lastName}}</h3>
+        </div>
+
+        <div class="content-card">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><p>ID:</p></td>
+                        <td><p>{{client.id}}</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>MEMBRESÍA: </p>
+                        </td>
+                        <td>
+                            <span *ngIf="client.status === true">ACTIVA</span><span *ngIf="client.status === false">INACTIVA</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>VENCIMIENTO:</p>
+                        </td>
+                        <td>
+                            <span *ngIf="client.membershipId === -1"> - - - - </span>
+                            <span *ngIf="client.membershipId !== -1"> {{client.endingDate}} </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p>DNI:</p></td>
+                        <td><p>{{client.dni}}</p></td>
+                    </tr>
+                    <tr>
+                        <td>EMAIL:</td>
+                        <td>{{client.email}}</td>
+                    </tr>
+                    <tr>
+                        <td>CIUDAD:</td>
+                        <td>{{client.city}}</td>
+                    </tr>
+                    <tr>
+                        <td>DIRECCIÓN:</td>
+                        <td>{{client.street}} {{client.number}}</td>
+                    </tr>
+                    <tr>
+                        <td>CÓDIGO POSTAL:</td>
+                        <td>{{client.street}} {{client.number}}</td>
+                    </tr>
+                    <tr>
+                        <td>TELÉFONO:</td>
+                        <td>{{client.phoneNumber}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+
+    <article class="membership-card card">
+        <div class="header-card">
+            <h3>Actualizar membresía</h3>
+        </div>
+        <div class="membership" >
+            <app-create-membership></app-create-membership>
+        </div>
+    </article>
+</section>
+

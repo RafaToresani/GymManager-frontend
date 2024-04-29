@@ -1,0 +1,11 @@
+<header>
+    <nav class="navbar">
+        <a class="element" (click)="navigate('home')">Inicio</a>
+        <a class="element" (click)="navigate('gyms')" *ngIf="userLoginOn">Gimnasios</a>
+        <a class="element" (click)="navigate('clients')" *ngIf="userLoginOn">Clientes</a>
+        <a class="element" *ngIf="userLoginOn">Gerentes</a>
+        <a class="element" *ngIf="userLoginOn">Cuenta</a>
+        <a class="element" (click)="navigate('login')" *ngIf="!userLoginOn">Iniciar sesión</a>
+        <a class="element" (click)="logout()" *ngIf="userLoginOn">Cerrar sesión</a>
+    </nav>
+</header>

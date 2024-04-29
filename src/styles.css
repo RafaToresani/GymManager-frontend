@@ -1,11 +1,155 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-html{
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+html {
     box-sizing: border-box;
     font-size: 62.5%;
-    font-family: "Quicksand", sans-serif;
+    font-family: "Lato", sans-serif;
+
 }
+
 *, *:after, *:before {
     box-sizing: inherit;
     margin: 0;
+}
+
+:root {
+    --primary: #76ABAE;
+    --secondary: #222831;
+    --accent: #F5EE9E;
+    --danger: #D64045;
+
+    --shadow-color: 0deg 0% 63%;
+    --shadow-elevation-low:
+        0.5px 0.7px 1px hsl(var(--shadow-color) / 0.34),
+        0.9px 1.2px 1.7px -1.2px hsl(var(--shadow-color) / 0.34),
+        2.1px 2.9px 4px -2.5px hsl(var(--shadow-color) / 0.34);
+    --shadow-elevation-medium:
+        0.5px 0.7px 1px hsl(var(--shadow-color) / 0.36),
+        1.7px 2.4px 3.3px -0.8px hsl(var(--shadow-color) / 0.36),
+        4.3px 5.9px 8.2px -1.7px hsl(var(--shadow-color) / 0.36),
+        10.6px 14.5px 20.2px -2.5px hsl(var(--shadow-color) / 0.36);
+    --shadow-elevation-high:
+        0.5px 0.7px 1px hsl(var(--shadow-color) / 0.34),
+        3.1px 4.2px 5.9px -0.4px hsl(var(--shadow-color) / 0.34),
+        5.8px 7.9px 11px -0.7px hsl(var(--shadow-color) / 0.34),
+        9.5px 12.9px 18px -1.1px hsl(var(--shadow-color) / 0.34),
+        15.1px 20.6px 28.7px -1.4px hsl(var(--shadow-color) / 0.34),
+        23.6px 32.3px 45px -1.8px hsl(var(--shadow-color) / 0.34),
+        35.9px 49.1px 68.4px -2.1px hsl(var(--shadow-color) / 0.34),
+        52.8px 72.3px 100.7px -2.5px hsl(var(--shadow-color) / 0.34);
+
+
+    --shadow-color-secondary: 216deg 28% 6%;
+    --shadow-elevation-low-secondary:
+        0.5px 0.7px 1px hsl(var(--shadow-color-secondary) / 0.34),
+        0.9px 1.2px 1.7px -1.2px hsl(var(--shadow-color-secondary) / 0.34),
+        2.1px 2.9px 4px -2.5px hsl(var(--shadow-color-secondary) / 0.34);
+    --shadow-elevation-medium-secondary:
+        0.5px 0.7px 1px hsl(var(--shadow-color-secondary) / 0.36),
+        1.7px 2.4px 3.3px -0.8px hsl(var(--shadow-color-secondary) / 0.36),
+        4.3px 5.9px 8.2px -1.7px hsl(var(--shadow-color-secondary) / 0.36),
+        10.6px 14.5px 20.2px -2.5px hsl(var(--shadow-color-secondary) / 0.36);
+    --shadow-elevation-high-secondary:
+        0.5px 0.7px 1px hsl(var(--shadow-color-secondary) / 0.34),
+        3.1px 4.2px 5.9px -0.4px hsl(var(--shadow-color-secondary) / 0.34),
+        5.8px 7.9px 11px -0.7px hsl(var(--shadow-color-secondary) / 0.34),
+        9.5px 12.9px 18px -1.1px hsl(var(--shadow-color-secondary) / 0.34),
+        15.1px 20.6px 28.7px -1.4px hsl(var(--shadow-color-secondary) / 0.34),
+        23.6px 32.3px 45px -1.8px hsl(var(--shadow-color-secondary) / 0.34),
+        35.9px 49.1px 68.4px -2.1px hsl(var(--shadow-color-secondary) / 0.34),
+        52.8px 72.3px 100.7px -2.5px hsl(var(--shadow-color-secondary) / 0.34);
+
+}
+
+
+.section-title {
+    position: relative;
+    font-size: 4vh;
+    height: 5vh;
+    text-align: center;
+    font-weight: 500;
+    background-color: var(--primary);
+}
+
+.error {
+    color: #D64045;
+    font-size: 2rem;
+
+}
+
+/* ============== FORM  
+    REGISTER, UPDATE, CREATE*/
+
+.form-container{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 75vh;
+    top: 5vh;
+    margin: 0 auto;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70vh;
+    margin: 0 auto;
+    font-size: 2rem;
+    background-color: var(--secondary);
+    padding: 3vh 0;
+    color:white;
+    box-shadow: var(--shadow-elevation-medium);
+}
+
+.form-field{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    width: 90%;
+}
+
+.form-field label{
+    width: 100%;
+}
+
+.form-field input{
+    height: 3vh;
+    font-size: 2rem;
+}
+
+.form-field input:focus{
+    outline: none;
+    background-color: var(--primary);
+    color: white;
+}
+
+.form-submit{
+    background-color: var(--primary);
+    color: var(--secondary);
+    font-size: 2rem;
+    margin-top: 1vh;
+    width: 50%;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+
+.form-submit:hover{
+    background-color: var(--accent);
+}
+
+.redirect-link{
+    margin-top: 5vh;
+    color: var(--primary);
+    transition: 0.3s ease-in-out;
+}
+
+.redirect-link:hover{
+    
+    color: var(--accent);
+    
 }

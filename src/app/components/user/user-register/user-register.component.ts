@@ -8,14 +8,14 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthResponse } from '../../../interfaces/response/AuthResponse';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-user-register',
   standalone: true,
-  imports: [CommonModule, HttpClientJsonpModule, ReactiveFormsModule],
+  imports: [CommonModule, HttpClientJsonpModule, ReactiveFormsModule, RouterLink],
   templateUrl: './user-register.component.html',
   styleUrl: './user-register.component.css',
 })

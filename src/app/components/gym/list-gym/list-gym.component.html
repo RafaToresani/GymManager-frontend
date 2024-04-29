@@ -1,0 +1,48 @@
+<h2 class="section-title">Gimnasios</h2>
+<section>
+  <p *ngIf="error !== ''" class="error">{{ error }}</p>
+  <div class="table-container">
+    <table class="content-table">
+      <thead>
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>TELÉFONO</th>
+        <th>DIRECCIÓN</th>
+        <th>ESTADO</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of gymsList">
+          <td>{{ item.id }}</td>
+          <td>{{ item.title }}</td>
+          <td>{{ item.phoneNumber }}</td>
+          <TD>{{ item.street }} {{ item.number }}</TD>
+          <td>
+            <span *ngIf="item.isActive === true">ACTIVO</span>
+            <span *ngIf="item.isActive === false">INACTIVO</span>
+          </td>
+          <td (click)="update(item.id)" class="edit"><a>Editar</a></td>
+          <td (click)="toggleStatus(item.id)">
+            <a>
+              <span *ngIf="item.isActive === true">Desactivar</span>
+              <span *ngIf="item.isActive === false">Activar</span>
+            </a>
+          </td>
+          <td class="details">
+            <a>Detalles</a>
+          </td>
+          <td (click)="delete(item.id)" class="delete"><a>ELIMINAR</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <nav>
+      <a (click)="navigate('less')">Anterior</a>
+      <span>{{ pageNumber + 1 }}</span>
+      <a (click)="navigate('more')">Siguiente</a>
+    </nav>
+  </div>
+</section>

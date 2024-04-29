@@ -1,0 +1,22 @@
+<div class="dashboard">
+
+    <div class="menu-dashboard">
+        <div class="title-menu">
+        </div>
+        <nav class="nav-menu">
+            <div class="item-menu"  (click)="updateDashboard('agregar')">
+                <a>Agregar</a>
+            </div>
+            <div class="item-menu" (click)="updateDashboard('mostrar')">
+                <a>Mostrar</a>
+            </div>
+        </nav>
+    </div>
+    
+    <div class="content">
+        <app-list-gym *ngIf="component === 'mostrar'"></app-list-gym>
+        <app-create-gym *ngIf="component === 'agregar'"></app-create-gym>
+        <app-update-gym *ngIf="component === 'editar'" ></app-update-gym>
+    </div>
+</div>
+

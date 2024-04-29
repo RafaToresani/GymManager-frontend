@@ -1,0 +1,35 @@
+<h2 class="section-title">Clientes</h2>
+<section>
+  <app-search-client class="search-component"></app-search-client>
+  <h2 class="error" *ngIf="error !== ''">{{ error }}</h2>
+  <div class="table-container">
+    <table class="content-table">
+      <thead>
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>DNI</th>
+        <th>TELÉFONO</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of clients">
+          <td>{{ item.id }}</td>
+          <td>{{ item.firstName }} {{ item.lastName }}</td>
+          <td>{{ item.dni }}</td>
+          <td>{{ item.phoneNumber }}</td>
+          <td class="edit" (click)="update(item.id)"><a>Editar</a></td>
+          <td class="details" (click)="details(item.id)"><a>Detalles</a></td>
+          <td class="delete" (click)="delete(item.id)"><a>ELIMINAR</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <nav>
+      <a (click)="navigate('less')">Anterior</a>
+      <span>{{ pageNumber + 1 }}</span>
+      <a (click)="navigate('more')">Siguiente</a>
+    </nav>
+  </div>
+</section>

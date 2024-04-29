@@ -1,0 +1,23 @@
+<div class="dashboard">
+
+    <div class="menu-dashboard">
+        <div class="title-menu">
+        </div>
+        <nav class="nav-menu">
+            <div class="item-menu" (click)="updateDashboard('agregar')">
+                <a >Agregar</a>
+            </div>
+            <div class="item-menu" (click)="updateDashboard('mostrar')">
+                <a >Mostrar</a>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="content">
+        <app-create-client *ngIf="component === 'agregar'"></app-create-client>
+        <app-list-client *ngIf="component === 'mostrar'"></app-list-client>
+        <app-update-client *ngIf="component === 'editar'"></app-update-client>
+        <app-client-details *ngIf="component === 'detalles'"></app-client-details>
+    </div>
+</div>

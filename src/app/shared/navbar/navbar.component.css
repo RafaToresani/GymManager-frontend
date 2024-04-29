@@ -1,0 +1,22 @@
+.navbar{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    height: 5vh;
+    background-color: var(--secondary);
+    z-index: 10;
+}
+
+.element{
+    font-size: 2rem;
+    padding: 1rem;
+    transition: 0.3s ease-in-out;
+    color: var(--primary)
+}
+
+.element:hover{
+    color: var(--accent);
+}
